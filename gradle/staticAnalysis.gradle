@@ -260,6 +260,9 @@ appendCpdErrors = { report, count, cpdFile ->
 }
 
 appendLintErrors = { report, count, lintFile ->
+    if (!lintFile.exists()) {
+        return count
+    }
     def rootNode = new XmlParser().parse(lintFile)
     for (def issueNode : rootNode.children()) {
         if (!issueNode.name().equals("issue")
