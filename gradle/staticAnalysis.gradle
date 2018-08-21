@@ -406,7 +406,7 @@ getLintTasks = {
 getStaticAnalysisTasks = { sources, binaries ->
     def tasksNames = new ArrayList<String>()
     try {
-        tasksNames.add(getCpdTask(sources))
+        //tasksNames.add(getCpdTask(sources))
         tasksNames.add(getCheckstyleTask(sources))
         tasksNames.add(getPmdTask(sources))
         tasksNames.addAll(getLintTasks())
